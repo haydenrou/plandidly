@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :trips do
-    member do
-      resources :activities
-    end
+    resources :activities, except: %i[index]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

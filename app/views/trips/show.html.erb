@@ -13,3 +13,21 @@
     </div>
   </div>
 </div>
+
+<div class="w-full">
+  <% content_for :title, "Activities" %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Activities</h1>
+    <%= link_to "New activity", new_trip_activity_path(@trip), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="activities" class="min-w-full">
+    <% @activities.each do |activity| %>
+      <%= render activity %>
+      <p>
+        <%= link_to "Show this activity", trip_activity_path(@trip, activity), class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      </p>
+    <% end %>
+  </div>
+</div>
