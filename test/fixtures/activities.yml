@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  address: MyString
+  trip: one
+  reference_number: MyString
+  start_at: 2024-09-07 09:46:37
+  end_at: 2024-09-07 09:46:37
+
+two:
+  title: MyString
+  address: MyString
+  trip: two
+  reference_number: MyString
+  start_at: 2024-09-07 09:46:37
+  end_at: 2024-09-07 09:46:37
