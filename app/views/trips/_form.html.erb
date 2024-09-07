@@ -1,4 +1,6 @@
 <%= form_with(model: trip, class: "contents") do |form| %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
   <% if trip.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>

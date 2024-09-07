@@ -1,27 +1,21 @@
 class TripsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_trip, only: %i[ show edit update destroy ]
+  before_action :set_trip, only: %i[show edit update destroy]
 
-  # GET /trips or /trips.json
   def index
-    @trips = Trip.all
+    @trips = Trip.for_user(current_user)
   end
 
-  # GET /trips/1 or /trips/1.json
   def show
     @activities = @trip.activities
   end
 
-  # GET /trips/new
   def new
     @trip = Trip.new
   end
 
-  # GET /trips/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /trips or /trips.json
   def create
     @trip = Trip.new(trip_params)
 
@@ -67,6 +61,6 @@ class TripsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trip_params
-      params.require(:trip).permit(:title, :location, :start_at, :end_at)
+      params.require(:trip).permit(:title, :location, :start_at, :end_at, :user_id)
     end
 end
