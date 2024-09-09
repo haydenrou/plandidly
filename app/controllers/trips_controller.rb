@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   before_action :set_trip, only: %i[show edit update destroy]
 
   def index
-    @trips = Trip.for_user(current_user)
+    @trips = current_user.trips
   end
 
   def show
